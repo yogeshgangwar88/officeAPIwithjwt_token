@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/officeapi/bin/Debug/net8.0
+/officeapi/obj
+/RepoLibrary/bin/Debug/net8.0
+/RepoLibrary/obj
+/ServiceLibrary/bin/Debug/net8.0
+/ServiceLibrary/obj
