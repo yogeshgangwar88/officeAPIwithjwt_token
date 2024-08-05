@@ -40,10 +40,8 @@ namespace officeapi.Controllers
             customResponse<Login> cr=new customResponse<Login>();
             try
             {
-                //var Loginmodel = this._mapper.Map<Login>(model);
-                Login modelx=new Login();
-                modelx.username = model.username;
-                modelx.password = model.password;
+                var modelx = this._mapper.Map<Login>(model);
+              
                 var res = await _loginservice.loginuser(modelx);
                 var  tokenvalue = "";
                 if (res!=null && res.token=="true" )
@@ -71,8 +69,9 @@ namespace officeapi.Controllers
             }
             catch (Exception e)
             {
+               // this._loggerservice.Log(LogLevel.Error,e.StackTrace);
                 return BadRequest();
-                throw;
+                //throw;
             }
             
 

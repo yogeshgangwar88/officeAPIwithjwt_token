@@ -7,26 +7,24 @@
       "RelativeMoniker": "D:0:0:{38CCF48A-65C4-42E1-A3C5-99D73BC9BA63}|officeapi.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8899E45A-5960-4877-8762-71B02CF33E8A}|..\\RepoLibrary\\RepoLibrary.csproj|d:\\projects\\officeapi\\repolibrary\\repository\\loginrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{38CCF48A-65C4-42E1-A3C5-99D73BC9BA63}|officeapi.csproj|d:\\projects\\officeapi\\officeapi\\services\\automapperconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38CCF48A-65C4-42E1-A3C5-99D73BC9BA63}|officeapi.csproj|solutionrelative:services\\automapperconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38CCF48A-65C4-42E1-A3C5-99D73BC9BA63}|officeapi.csproj|d:\\projects\\officeapi\\officeapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38CCF48A-65C4-42E1-A3C5-99D73BC9BA63}|officeapi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8899E45A-5960-4877-8762-71B02CF33E8A}|..\\RepoLibrary\\RepoLibrary.csproj|d:\\projects\\officeapi\\repolibrary\\dal\\dblayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7048A232-28D1-4BFC-9B95-2C1002FC552B}|..\\ServiceLibrary\\ServiceLibrary.csproj|d:\\projects\\officeapi\\servicelibrary\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7048A232-28D1-4BFC-9B95-2C1002FC552B}|..\\ServiceLibrary\\ServiceLibrary.csproj|d:\\projects\\officeapi\\servicelibrary\\models\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7048A232-28D1-4BFC-9B95-2C1002FC552B}|..\\ServiceLibrary\\ServiceLibrary.csproj|d:\\projects\\officeapi\\servicelibrary\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7048A232-28D1-4BFC-9B95-2C1002FC552B}|..\\ServiceLibrary\\ServiceLibrary.csproj|d:\\projects\\officeapi\\servicelibrary\\interfaces\\ilogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8899E45A-5960-4877-8762-71B02CF33E8A}|..\\RepoLibrary\\RepoLibrary.csproj|d:\\projects\\officeapi\\repolibrary\\repository\\loginrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8899E45A-5960-4877-8762-71B02CF33E8A}|..\\RepoLibrary\\RepoLibrary.csproj|d:\\projects\\officeapi\\repolibrary\\dal\\dblayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,11 +34,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "AutomapperConfig.cs",
+              "DocumentMoniker": "D:\\Projects\\OfficeAPI\\officeapi\\Services\\AutomapperConfig.cs",
+              "RelativeDocumentMoniker": "Services\\AutomapperConfig.cs",
+              "ToolTip": "D:\\Projects\\OfficeAPI\\officeapi\\Services\\AutomapperConfig.cs",
+              "RelativeToolTip": "Services\\AutomapperConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T05:19:52.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "DbLayer.cs",
               "DocumentMoniker": "D:\\Projects\\OfficeAPI\\RepoLibrary\\DAL\\DbLayer.cs",
               "RelativeDocumentMoniker": "..\\RepoLibrary\\DAL\\DbLayer.cs",
@@ -48,8 +59,7 @@
               "RelativeToolTip": "..\\RepoLibrary\\DAL\\DbLayer.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAswGoAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-04T14:21:00.648Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-04T14:21:00.648Z"
             },
             {
               "$type": "Document",
@@ -59,14 +69,14 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Projects\\OfficeAPI\\officeapi\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAAwFUAAAAMAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAABYAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-04T09:15:06.231Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "LoginRepo.cs",
               "DocumentMoniker": "D:\\Projects\\OfficeAPI\\RepoLibrary\\Repository\\LoginRepo.cs",
               "RelativeDocumentMoniker": "..\\RepoLibrary\\Repository\\LoginRepo.cs",
@@ -74,59 +84,32 @@
               "RelativeToolTip": "..\\RepoLibrary\\Repository\\LoginRepo.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-04T07:45:15.627Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-04T07:45:15.627Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "LoginService.cs",
               "DocumentMoniker": "D:\\Projects\\OfficeAPI\\ServiceLibrary\\Services\\LoginService.cs",
               "RelativeDocumentMoniker": "..\\ServiceLibrary\\Services\\LoginService.cs",
               "ToolTip": "D:\\Projects\\OfficeAPI\\ServiceLibrary\\Services\\LoginService.cs",
               "RelativeToolTip": "..\\ServiceLibrary\\Services\\LoginService.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAiwC4AAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-04T05:07:41.579Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "ILogin.cs",
               "DocumentMoniker": "D:\\Projects\\OfficeAPI\\ServiceLibrary\\Interfaces\\ILogin.cs",
               "RelativeDocumentMoniker": "..\\ServiceLibrary\\Interfaces\\ILogin.cs",
               "ToolTip": "D:\\Projects\\OfficeAPI\\ServiceLibrary\\Interfaces\\ILogin.cs",
               "RelativeToolTip": "..\\ServiceLibrary\\Interfaces\\ILogin.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA0AAAAeAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-04T05:03:40.666Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LoginDTO.cs",
-              "DocumentMoniker": "D:\\Projects\\OfficeAPI\\ServiceLibrary\\Models\\DTOs\\LoginDTO.cs",
-              "RelativeDocumentMoniker": "..\\ServiceLibrary\\Models\\DTOs\\LoginDTO.cs",
-              "ToolTip": "D:\\Projects\\OfficeAPI\\ServiceLibrary\\Models\\DTOs\\LoginDTO.cs",
-              "RelativeToolTip": "..\\ServiceLibrary\\Models\\DTOs\\LoginDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-04T05:02:06.575Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Login.cs",
-              "DocumentMoniker": "D:\\Projects\\OfficeAPI\\ServiceLibrary\\Models\\Login.cs",
-              "RelativeDocumentMoniker": "..\\ServiceLibrary\\Models\\Login.cs",
-              "ToolTip": "D:\\Projects\\OfficeAPI\\ServiceLibrary\\Models\\Login.cs",
-              "RelativeToolTip": "..\\ServiceLibrary\\Models\\Login.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-04T04:58:28.919Z",
               "EditorCaption": ""
             },
             {
@@ -137,7 +120,7 @@
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
               "ToolTip": "D:\\Projects\\OfficeAPI\\officeapi\\Controllers\\LoginController.cs",
               "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAAFAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAmwEcAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-04T04:48:29.992Z",
               "EditorCaption": ""

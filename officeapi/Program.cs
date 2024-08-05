@@ -1,4 +1,5 @@
 
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
@@ -19,6 +20,7 @@ namespace officeapi
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
             builder.Services.AddAutoMapper(typeof(Program));
+            
             builder.Services.AddScoped<ILogin, LoginService>();
             builder.Services.AddCors(options =>
             {

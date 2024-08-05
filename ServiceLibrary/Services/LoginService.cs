@@ -3,7 +3,6 @@ using RepoLibrary.RepoModels;
 using RepoLibrary.Repository;
 using ServiceLibrary.Interfaces;
 using ServiceLibrary.Models;
-using ServiceLibrary.Models.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Data;

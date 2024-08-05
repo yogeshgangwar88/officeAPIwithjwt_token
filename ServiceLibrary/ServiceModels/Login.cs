@@ -9,9 +9,10 @@ namespace ServiceLibrary.Models
 {
     public class Login
     {
-        [Required]
+        [Required(ErrorMessage ="this is required feild")]
+        [MinLength(3,ErrorMessage ="min length is 3")]
         public string ? username { get; set; }
-        [Required]
+        [Required(ErrorMessage = "this is required feild")]
         public string  ?password { get; set; }
         public string ? token { get; set; }
     }
