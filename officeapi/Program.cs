@@ -1,6 +1,7 @@
 
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using officeapi.Services;
@@ -57,9 +58,7 @@ namespace officeapi
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
                 };
             });
-            //builder.Services.AddScoped<Custommiddleware>();
             builder.Services.AddSingleton<IKafkaProducer, KafkaProducer>();
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -86,10 +85,11 @@ namespace officeapi
             });
             app.UseRouting();
             app.UseCors("AllowSpecificOrigin");
+          
             app.UseAuthentication();
             app.UseAuthorization();
             ///custom middleware ///
-            //app.MycustomMiddleware();
+            app.UseCustomMiddleware(builder.Configuration);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
