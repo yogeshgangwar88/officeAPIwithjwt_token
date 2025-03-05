@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,10 +13,10 @@ namespace RepoLibrary.DAL
 {
     public class DbLayer
     {
-        public readonly string constr;
-        public DbLayer()
+        private readonly string constr;
+        public DbLayer(IConfiguration configuration)
         {
-            this.constr = @"Server=YOGESH; User id=sa; Password=sa123; Database=Testdb; Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true";
+            this.constr = configuration["ConnectionStrings:Constr"];
         }
         protected async Task<DataSet> Datasetwithsp(string spname, Dictionary<string, string> spParams)
         {

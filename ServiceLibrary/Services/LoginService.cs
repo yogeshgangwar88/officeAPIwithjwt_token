@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using RepoLibrary.RepoModels;
 using RepoLibrary.Repository;
 using ServiceLibrary.Interfaces;
@@ -17,9 +18,9 @@ namespace ServiceLibrary.Services
     public class LoginService : ILogin
     {
         LoginRepo repo;
-        public LoginService()
+        public LoginService(IConfiguration configuration)
         {
-            repo = new LoginRepo();
+            repo = new LoginRepo(configuration);
         }
         public async Task<List<Items>> getAll(string username)
         {

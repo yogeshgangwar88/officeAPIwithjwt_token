@@ -3,6 +3,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
+using officeapi.Services;
 using ServiceLibrary.Interfaces;
 using ServiceLibrary.Services;
 using System.Text;
@@ -14,7 +15,8 @@ namespace officeapi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            
             builder.Services.AddMvc(services => services.EnableEndpointRouting = false).AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
@@ -56,7 +58,7 @@ namespace officeapi
                 };
             });
             //builder.Services.AddScoped<Custommiddleware>();
-
+            builder.Services.AddSingleton<IKafkaProducer, KafkaProducer>();
 
             var app = builder.Build();
 

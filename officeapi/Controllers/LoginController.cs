@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
+using ExcelDataReader;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
+using officeapi.Services;
 using ServiceLibrary.Interfaces;
 using ServiceLibrary.Models;
 using ServiceLibrary.Models.DTOs;
 using System.IdentityModel.Tokens.Jwt;
-
-//using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
@@ -20,13 +20,11 @@ namespace officeapi.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private readonly ILogger<LoginController> _loggerservice;
         private readonly ILogin _loginservice;
         private readonly IMapper _mapper;
         private readonly IConfiguration _config;
-        public LoginController(ILogger<LoginController> logger, ILogin login,IMapper mapper, IConfiguration config)
+        public LoginController(ILogin login,IMapper mapper, IConfiguration config)
         {
-            this._loggerservice = logger;
             this._loginservice = login;
             this._mapper = mapper;
             this._config = config;
@@ -35,6 +33,7 @@ namespace officeapi.Controllers
 
         // POST api/<LoginController>
         [HttpPost]
+        [Route("Loginuser")]
         public async Task< IActionResult> Loginuser([FromBody] LoginDTO model)
         {
             customResponse<Login> cr=new customResponse<Login>();
@@ -73,17 +72,16 @@ namespace officeapi.Controllers
                 return BadRequest();
                 //throw;
             }
-            
-
         }
-        [Route("getAll")]
-        [HttpGet]
         [Authorize]
-        public async Task<IActionResult> getAll(string productid)
+        [HttpGet("GetAll")]
+        public async Task<IActionResult> GetAll()
         {
-           var data=await this._loginservice.getAll(productid);
-            return Ok(data);
+            customResponse<string> cr = new customResponse<string>();
+            cr.statuscode = 200;
+            await Task.Delay(100);
+            cr.data = new List<string> { "Hello", "Test", "Data" };
+            return Ok(cr);
         }
-        
     }
 }
