@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
+using RepoLibrary.Interfaces;
 using RepoLibrary.RepoModels;
 using RepoLibrary.Repository;
 using ServiceLibrary.Interfaces;
@@ -17,14 +18,14 @@ namespace ServiceLibrary.Services
 {
     public class LoginService : ILogin
     {
-        LoginRepo repo;
-        public LoginService(IConfiguration configuration)
+        private readonly ILoginRepo _repo;
+        public LoginService(ILoginRepo repo)
         {
-            repo = new LoginRepo(configuration);
+           this._repo = repo;
         }
         public async Task<List<Items>> getAll(string username)
         {
-            var data =await repo.getAll();
+            var data =await _repo.getAll();
             List<Items> list = new List<Items>();
             if (data!=null && data.Tables[0].Rows.Count>0)
             {
@@ -44,7 +45,7 @@ namespace ServiceLibrary.Services
             LoginRepoModel modelrepo=new LoginRepoModel();
             modelrepo.username = model.username;
             modelrepo.password = model.password;    
-            var data=await repo.Loginuser(modelrepo);
+            var data=await _repo.Loginuser(modelrepo);
             Login l=new Login();
             if (data!=null && data.Tables[0].Rows.Count>0)
             {

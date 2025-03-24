@@ -23,9 +23,9 @@ namespace officeapi.Controllers
         private readonly ILogin _loginservice;
         private readonly IMapper _mapper;
         private readonly IConfiguration _config;
-        public LoginController(ILogin login,IMapper mapper, IConfiguration config)
+        public LoginController(ILogin loginservice, IMapper mapper, IConfiguration config)
         {
-            this._loginservice = login;
+            this._loginservice = loginservice;
             this._mapper = mapper;
             this._config = config;
         }
@@ -51,7 +51,7 @@ namespace officeapi.Controllers
                         new Claim(Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
                         new Claim("Userid",model.username),
                         new Claim("password",model.password),
-
+                        new Claim("customValue","myCustomValue"),
                     };
                     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
                     var signin=new SigningCredentials(key,SecurityAlgorithms.HmacSha256);
@@ -64,7 +64,7 @@ namespace officeapi.Controllers
                         );
                      tokenvalue=new JwtSecurityTokenHandler().WriteToken(token);
                 }
-                return Ok(new { tokenvalue= tokenvalue, res = res });
+                return Ok(new { tokenvalue= tokenvalue, username= model.username,password= model.password });
             }
             catch (Exception e)
             {
@@ -73,6 +73,14 @@ namespace officeapi.Controllers
                 //throw;
             }
         }
+
+        private async Task<dynamic> DecryptToken(string tokenvalue)
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var token = handler.ReadJwtToken(tokenvalue);
+            var userId = token.Claims.First(c => c.Type == "Userid").Value;
+            return userId;
+        } 
         [Authorize]
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()

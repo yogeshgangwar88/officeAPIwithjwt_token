@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using officeapi.Services;
+using RepoLibrary.Interfaces;
+using RepoLibrary.Repository;
 using ServiceLibrary.Interfaces;
 using ServiceLibrary.Services;
 using System.Text;
@@ -23,8 +25,10 @@ namespace officeapi
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
             builder.Services.AddAutoMapper(typeof(Program));
-            
+            // add custom services in DI //
+            builder.Services.AddScoped<ILoginRepo, LoginRepo>();
             builder.Services.AddScoped<ILogin, LoginService>();
+           //////////////////////////////////////////
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowSpecificOrigin",

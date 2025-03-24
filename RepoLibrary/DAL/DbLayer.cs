@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using RepoLibrary.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,14 +12,14 @@ using System.Xml.Linq;
 
 namespace RepoLibrary.DAL
 {
-    public class DbLayer
+    public abstract class DbLayer
     {
         private readonly string constr;
         public DbLayer(IConfiguration configuration)
         {
             this.constr = configuration["ConnectionStrings:Constr"];
         }
-        protected async Task<DataSet> Datasetwithsp(string spname, Dictionary<string, string> spParams)
+        public async Task<DataSet> Datasetwithsp(string spname, Dictionary<string, object> spParams)
         {
             DataSet ds = new DataSet();
             try
@@ -53,7 +54,7 @@ namespace RepoLibrary.DAL
             return ds;
         }
 
-        protected async Task<int> ExecuteNonquerywithSp(string spName, Dictionary<string, string> spParams)
+        public async Task<int> ExecuteNonquerywithSp(string spName, Dictionary<string, object> spParams)
         {
             string SqlconString = this.constr;
             int result = 0;
@@ -87,7 +88,7 @@ namespace RepoLibrary.DAL
             return result;
         }
 
-        protected async Task<string> ExecutescalarwithSp(string spName, Dictionary<string, string> spParams)
+        public async Task<string> ExecutescalarwithSp(string spName, Dictionary<string, object> spParams)
         {
             string result = string.Empty;
             await Task.Run(() =>
