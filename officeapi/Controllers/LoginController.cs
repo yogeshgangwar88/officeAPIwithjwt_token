@@ -73,7 +73,7 @@ namespace officeapi.Controllers
                 //throw;
             }
         }
-
+        [NonAction]
         private async Task<dynamic> DecryptToken(string tokenvalue)
         {
             var handler = new JwtSecurityTokenHandler();

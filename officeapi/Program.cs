@@ -1,14 +1,17 @@
 
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using officeapi.Services;
+using RepoLibrary.DBContext;
 using RepoLibrary.Interfaces;
 using RepoLibrary.Repository;
 using ServiceLibrary.Interfaces;
 using ServiceLibrary.Services;
+using System;
 using System.Text;
 
 namespace officeapi
@@ -19,7 +22,8 @@ namespace officeapi
         {
             var builder = WebApplication.CreateBuilder(args);
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-            
+
+            builder.Services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("Constr")));
             builder.Services.AddMvc(services => services.EnableEndpointRouting = false).AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
@@ -28,6 +32,10 @@ namespace officeapi
             // add custom services in DI //
             builder.Services.AddScoped<ILoginRepo, LoginRepo>();
             builder.Services.AddScoped<ILogin, LoginService>();
+
+            builder.Services.AddScoped<IProductRepo, ProductRepo>();
+            builder.Services.AddScoped<IProductService, ProductService>();
+
            //////////////////////////////////////////
             builder.Services.AddCors(options =>
             {
