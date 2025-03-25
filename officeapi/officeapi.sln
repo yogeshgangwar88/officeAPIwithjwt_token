@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceLibrary", "..\Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepoLibrary", "..\RepoLibrary\RepoLibrary.csproj", "{8899E45A-5960-4877-8762-71B02CF33E8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "..\Models\Models.csproj", "{C12F94E6-2CC7-4C25-BE42-62827EB8BA80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8899E45A-5960-4877-8762-71B02CF33E8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8899E45A-5960-4877-8762-71B02CF33E8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8899E45A-5960-4877-8762-71B02CF33E8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C12F94E6-2CC7-4C25-BE42-62827EB8BA80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C12F94E6-2CC7-4C25-BE42-62827EB8BA80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C12F94E6-2CC7-4C25-BE42-62827EB8BA80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C12F94E6-2CC7-4C25-BE42-62827EB8BA80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
