@@ -22,7 +22,10 @@ namespace Models.Models
         [Required]
         public bool Ismarried { get; set; }
         public string? Password { get; set; }
+      
+        //// Navigation Property (One-to-One)
+        public UserFamilyDetails? UserFamilyDetails { get; set; }
         //navigation property for many to many ///
-        public List<UserProducts> UserProducts { get; set; }
+        public List<UserProducts>? UserProducts { get; set; }
     }
 }
