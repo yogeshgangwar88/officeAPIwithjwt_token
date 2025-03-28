@@ -1,0 +1,51 @@
+﻿@using Models.Models
+@model Users
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = Model?.UserID == 0 ? "Create User" : "Edit User";
+}
+
+<h2>@ViewData["Title"]</h2>
+<h3>
+    @Html.Raw(ViewBag.User)
+</h3>
+
+    @using (Html.BeginForm("NonAPIHome", "NonAPI", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.UserID,"0")
+
+        <div class="mb-3">
+            @Html.LabelFor(m => m.Name, new { @class = "form-label" })
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", required = "required" })
+            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(m => m.DOB, new { @class = "form-label" })
+            @Html.TextBoxFor(m => m.DOB, new { @class = "form-control", type = "date", required = "required" })
+            @Html.ValidationMessageFor(m => m.DOB, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(m => m.Age, new { @class = "form-label" })
+            @Html.TextBoxFor(m => m.Age, new { @class = "form-control", type = "number", required = "required" })
+            @Html.ValidationMessageFor(m => m.Age, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Married</label><br />
+            @Html.CheckBoxFor(m => m.Ismarried)
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(m => m.Password, new { @class = "form-label" })
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="@Url.Action("Index", "Users")" class="btn btn-secondary">Back</a>
+    }
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
